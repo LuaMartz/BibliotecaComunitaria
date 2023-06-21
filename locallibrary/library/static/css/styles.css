@@ -3,4 +3,39 @@
     padding: 0;
     list-style: none;
 }
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
   
+.title {
+    font-size: 24px;
+    color: #333;
+}
+  
+.subtitle {
+    font-size: 16px;
+    color: #666;
+}
+  
+.dynamic-content {
+    margin-top: 20px;
+}
+  
+.record-counts {
+    margin-top: 10px;
+}
+  
+.record-counts ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.record-counts li {
+    margin-bottom: 5px;
+}
