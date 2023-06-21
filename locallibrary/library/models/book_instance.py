@@ -11,16 +11,16 @@ class BookInstance(models.Model):
     uniqueld = models.CharField(max_length=250, help_text='Uniqueld Book Instance')
     due_back = models.DateField(null=True, blank=True)
     LOAN_STATUS = (
-        ('m', 'Maintenance'),
-        ('o', 'On loan'),
-        ('a', 'Available'),
-        ('r', 'Reserved'),
+        ('M', 'Maintenance'),
+        ('O', 'On loan'),
+        ('A', 'Available'),
+        ('R', 'Reserved'),
     )
     status = models.CharField(
         max_length=1,
         choices=LOAN_STATUS,
         blank=True,
-        default='m',
+        default='M',
         help_text='Book availability',
     )
 

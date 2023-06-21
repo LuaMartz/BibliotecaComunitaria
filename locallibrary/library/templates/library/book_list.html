@@ -1,17 +1,22 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h1>Book List</h1>
-    {% if book_list %}
+    <h1>All Book Instances</h1>
+    {% block stylesheets %}
+    {{ block.super }}
+    <link rel="stylesheet" href="styles.css">
+    {% endblock %}
+
+    {% if object_list %}
         <ul>
-            {% for book in book_list %}
+            {% for bookinstance in object_list %}
                 <li>
-                    <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
-                    ({{ book.author }})
+                    <a href="{{ bookinstance.get_absolute_url }}">{{ bookinstance.book.title }}</a>
+                    {{ bookinstance.get_status_display }}
                 </li>
-            {% empty %}
-                <p>There are no books in the library.</p>
             {% endfor %}
         </ul>
+    {% else %}
+        <p>No book instances available.</p>
     {% endif %}
 {% endblock %}

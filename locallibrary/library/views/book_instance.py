@@ -4,7 +4,6 @@ from ..models.book_instance import BookInstance
 
 class BookInstanceListView(generic.ListView):
     model = BookInstance
-    queryset = BookInstance.objects.all()
     template_name = 'bookinstance_list.html'
 
 class BookInstanceDetailView(generic.DetailView):

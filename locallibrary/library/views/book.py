@@ -22,7 +22,7 @@ class BookListView(generic.ListView):
 
 class BookDetailView(generic.DetailView):
     model = Book
-    template_name = 'book_detail.html'
+    template_name = 'library/book_detail.html'
     
     def book_detail_view(request, primary_key):
         try:

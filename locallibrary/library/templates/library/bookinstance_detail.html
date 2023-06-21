@@ -1,1 +1,25 @@
-<h1>Nook instance detail</h1>
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Book Instance Details</h1>
+    {% if bookinstance %}
+        <dl class="row">
+            <dt class="col-sm-3">Book:</dt>
+            <dd class="col-sm-9">{{ bookinstance.book.title }}</dd>
+    
+            <dt class="col-sm-3">Imprint:</dt>
+            <dd class="col-sm-9">{{ bookinstance.imprint }}</dd>
+    
+            <dt class="col-sm-3">Unique ID:</dt>
+            <dd class="col-sm-9">{{ bookinstance.uniqueld }}</dd>
+    
+            <dt class="col-sm-3">Due Back:</dt>
+            <dd class="col-sm-9">{{ bookinstance.due_back }}</dd>
+    
+            <dt class="col-sm-3">Status:</dt>
+            <dd class="col-sm-9">{{ bookinstance.get_status_display }}</dd>
+        </dl>
+    {% else %}
+        <p>Book instance does not exist.</p>
+    {% endif %}
+{% endblock %}
